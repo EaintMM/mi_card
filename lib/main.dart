@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,37 +13,68 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              color: Colors.red,
-              width: 100.0,
-              height: double.infinity,
-            ),
-            Column(
+          child: Center(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 100.0,
-                  width: 100.0,
-                  color: Colors.yellow,
+              children: const [
+                CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: AssetImage('images/haein.jpg'),
                 ),
-                 Container(
-                  height: 100.0,
-                  width: 100.0,
-                  color: Colors.green,
+                Text(
+                  'Jung Haein',
+                  style: TextStyle(
+                    fontFamily: 'Pacifico',
+                    fontSize: 20.0,
+                  ),
                 ),
-                
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                  child: Text(
+                    'Korean Actor',
+                    style: TextStyle(
+                      fontFamily: 'SourceSans',
+                      fontSize: 15.0,
+                    ),
+                  ),
+                ),
+               
+                Divider(
+                  thickness: 0.8,
+                  color: Colors.white,
+                  indent: 150.0,
+                  endIndent: 150.0,
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                  child: Card(
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.phone,
+                        color: Colors.teal,
+                      ),
+                      title: Text('+959 88123456'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
+                  child: Card(
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.email,
+                        color: Colors.teal,
+                      ),
+                      title: Text('junghaein@gmail.com'),
+                    ),
+                  ),
+                ),
               ],
             ),
-            Container(
-              color: Colors.blue,
-              width: 100.0,
-              height: double.infinity,
-            ),
-          ],
-        )),
+          ),
+        ),
       ),
     );
   }
